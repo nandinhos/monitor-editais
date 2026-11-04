@@ -165,3 +165,4 @@ A evolução do repositório demonstra um movimento claro de:
 | `8d6bf44` | `frontend`| Adoção de layouts persistentes no React |
 | `302c362` | `tooling` | Diretório de cache relativo ao projeto para Rector e PHPStan |
 | `50a2866` | `tests` | Teste E2E de redefinição de senha com navegador |
+

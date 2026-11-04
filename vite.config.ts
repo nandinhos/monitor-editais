@@ -75,6 +75,7 @@ export default defineConfig({
         tailwindcss(),
         wayfinder({
             formVariants: true,
+            command: 'docker exec monitor-editais.test php artisan wayfinder:generate',
         }),
     ],
 });

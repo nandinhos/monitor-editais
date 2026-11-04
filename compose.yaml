@@ -1,0 +1,21 @@
+services:
+    laravel.test:
+        image: sail-8.5/app
+        container_name: monitor-editais.test
+        extra_hosts:
+            - 'host.docker.internal:host-gateway'
+        ports:
+            - '${APP_PORT:-12080}:80'
+            - '${VITE_PORT:-12173}:${VITE_PORT:-12173}'
+        environment:
+            WWWUSER: '${WWWUSER:-1000}'
+            WWWGROUP: '${WWWGROUP:-1000}'
+            SUPERVISOR_PHP_USER: '${SUPERVISOR_PHP_USER:-sail}'
+            SUPERVISOR_PHP_COMMAND: '${SUPERVISOR_PHP_COMMAND}'
+            LARAVEL_SAIL: 1
+            XDEBUG_MODE: '${SAIL_XDEBUG_MODE:-off}'
+            IGNITION_LOCAL_SITES_PATH: '${PWD}'
+        volumes:
+            - '.:/var/www/html'
+        restart: unless-stopped
+
